@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    build: ./python
+    ports:
+      - "5003:5000"
+    command: python /app/wwwroot/app.py
+    volumes:
+      - ./wwwroot:/app/wwwroot
+  redis:
+    image: "redis:alpine"
